@@ -4,7 +4,8 @@ module.exports = {
     './views/index.html',
     './views/signup.html',
     './views/login.html',
-    './views/*.{html}'
+    './views/*.{html}',
+    './views/*.{html,js}',
   
   ],
   theme: {
