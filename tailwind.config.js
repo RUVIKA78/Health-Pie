@@ -7,6 +7,11 @@ module.exports = {
     './views/*.{html}',
     './views/*.{html,js}',
   
+    './views/*.{html}',
+    './views/*.{html,js}',
+  './views/patientDashBoard.html',
+      './views/doctorDash.html'
+
   ],
   theme: {
     extend: {

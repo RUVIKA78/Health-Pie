@@ -10,6 +10,7 @@ export const register = async (req, res) => {
 
     // hashing password
 
+<<<<<<< HEAD
     const salt = await bcrypt.genSalt(10);
     const hash = await bcrypt.hash(req.body.password, salt);
     try {
@@ -31,6 +32,10 @@ export const register = async (req, res) => {
         console.error(err);
         res.status(500).json({ error: "Internal Server Error" });
     }
+=======
+      const salt=await bcrypt.genSalt(10);
+      const hash=await bcrypt.hash(req.body.password,salt);
+>>>>>>> 3ad971eb6b842580dbaf40db9698fd24196be249
 
     const user = await User.find({ email: req.body.email });
     if (user.length == 0) {
@@ -66,7 +71,12 @@ export const register = async (req, res) => {
         res.render("../views/error.ejs", { code, msg, description });
     }
 
+<<<<<<< HEAD
 
+=======
+            res.render("../views/error.ejs",{code,msg,description});
+      }
+>>>>>>> 3ad971eb6b842580dbaf40db9698fd24196be249
 };
 
 //user login
@@ -79,6 +89,7 @@ export const login = async (req, res) => {
 
         //if user does not exist
 
+<<<<<<< HEAD
         if (!user) {
 
             res.json({ message: "user is not found" });
@@ -86,6 +97,12 @@ export const login = async (req, res) => {
             let code = 404;
             let msg = "User Not Found";
             let description = "the user you are trying to login doesn't exist";
+=======
+        if(!user){
+            let code=404;
+            let msg="User Not Found";
+            let description ="the user you are trying to login doesn't exist";
+>>>>>>> 3ad971eb6b842580dbaf40db9698fd24196be249
 
             res.render("../views/error.ejs", { code, msg, description });
             return;
@@ -101,9 +118,20 @@ export const login = async (req, res) => {
 
         //if password not correct
 
+<<<<<<< HEAD
         if (!checkCorrectPass) {
             res.json({ message: "incorrect password or email" });
             user.password
+=======
+        if(!checkCorrectPass){
+            // res.json({ message: "incorrect password or email" });
+            let code=201;
+            let msg="Incorrect Email or Password";
+            let description ="";
+
+            res.render("../views/error.ejs",{code,msg,description});
+            return;
+>>>>>>> 3ad971eb6b842580dbaf40db9698fd24196be249
         }
 //if password not correct
 
@@ -134,6 +162,7 @@ res.cookie("accessToken", token, {
 })
     .json({ message: "successfully login", token, role, data: { ...rest } });
     } catch (err) {
+<<<<<<< HEAD
     res.json({ message: "failed to login" });
 
     console.error(err);
@@ -143,6 +172,15 @@ res.cookie("accessToken", token, {
 
     res.render("../views/error.ejs", { code, msg, description });
 }
+=======
+        console.error(err);
+        let code=500;
+        let msg="Internal Server Error";
+        let description ="";
+
+        res.render("../views/error.ejs",{code,msg,description}); 
+    }
+>>>>>>> 3ad971eb6b842580dbaf40db9698fd24196be249
   }
 
 

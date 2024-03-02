@@ -92,6 +92,7 @@ app.post("/signup",(req,res)=>{
 app.get("/home",(req,res)=>{
     res.sendFile("patientDashboard.html",{root :"views"});
 });
+    res.sendFile("index.html",{root :  "views"});
 
 app.get("/login",(req,res)=>{
     res.sendFile("login.html",{root : "views"});
@@ -205,3 +206,4 @@ app.get("/mymeals/:name/:id/add",(req,res)=>{
     let {name,id}=req.params;
     let data={"name" : name, "id":id};
 })
+
