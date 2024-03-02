@@ -13,10 +13,8 @@ const doctorSchema = new mongoose.Schema({
 
   fullName: {
     id: {
-      type: String
+      type: String,
 
-<<<<<<< HEAD
-=======
       id: {
         type: String
         
@@ -59,7 +57,6 @@ const doctorSchema = new mongoose.Schema({
         type : String,
         required : true
       },
->>>>>>> 3ad971eb6b842580dbaf40db9698fd24196be249
     },
     email: {
       type: String,

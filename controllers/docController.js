@@ -8,7 +8,6 @@ export const createDoctor=async(req,res)=>{
 
         //create new document using model and the request body
 
-<<<<<<< HEAD
         const newDoctor=new Doctor(req.body);
 
         //save the newuser data to the database
@@ -16,8 +15,6 @@ export const createDoctor=async(req,res)=>{
         const data=await newDoctor.save();
         //respond with success message
         res.status(201).json({message:"new user created successfully",data})
-=======
->>>>>>> 3ad971eb6b842580dbaf40db9698fd24196be249
         let user=await Doctor.find({email : req.body.email});
 
         if(!user){

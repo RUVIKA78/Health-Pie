@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 import User from "./../models/source.js"
-=======
->>>>>>> 3ad971eb6b842580dbaf40db9698fd24196be249
+
 import User from "../models/source.js"
 
 //create user
@@ -11,7 +9,6 @@ export const createUser=async(req,res)=>{
     try {
 
         //create new document using model and the request body
-<<<<<<< HEAD
 
         const newUser=new User(req.body);
 
@@ -20,8 +17,6 @@ export const createUser=async(req,res)=>{
         const data=await newUser.save();
         //respond with success message
         res.status(201).json({message:"new user created successfully",data})
-=======
->>>>>>> 3ad971eb6b842580dbaf40db9698fd24196be249
         let user=await User.find({email : req.body.email});
 
         if(!user){
